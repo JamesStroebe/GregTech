@@ -31,6 +31,7 @@ public class ParallelLogicTest {
     public static void bootStrap() {
         Bootstrap.register();
         Materials.register();
+        GTValues.IS_TEST = true;
         MetaFluids.init();
     }
 
