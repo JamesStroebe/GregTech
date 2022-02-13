@@ -14,6 +14,9 @@ import net.minecraft.init.Bootstrap;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.DummyModContainer;
+import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.ModMetadata;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -24,6 +27,9 @@ public class AbstractRecipeLogicTest {
     @BeforeClass
     public static void init() {
         Bootstrap.register();
+        ModMetadata meta = new ModMetadata();
+        meta.modId = "gregtech";
+        Loader.instance().setupTestHarness(new DummyModContainer(meta));
     }
 
     @Test

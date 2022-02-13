@@ -15,6 +15,9 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Bootstrap;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.DummyModContainer;
+import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.ModMetadata;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -30,6 +33,9 @@ public class ParallelLogicTest {
     @BeforeClass
     public static void bootStrap() {
         Bootstrap.register();
+        ModMetadata meta = new ModMetadata();
+        meta.modId = "gregtech";
+        Loader.instance().setupTestHarness(new DummyModContainer(meta));
         Materials.register();
         MetaFluids.init();
     }

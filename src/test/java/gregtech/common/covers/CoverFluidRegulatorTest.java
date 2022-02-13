@@ -5,6 +5,9 @@ import net.minecraft.init.*;
 import net.minecraft.util.*;
 import net.minecraftforge.fluids.*;
 import net.minecraftforge.fluids.capability.*;
+import net.minecraftforge.fml.common.DummyModContainer;
+import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.ModMetadata;
 import org.junit.*;
 
 import java.util.function.*;
@@ -20,6 +23,9 @@ public class CoverFluidRegulatorTest {
     @BeforeClass
     public static void bootStrap() {
         Bootstrap.register();
+        ModMetadata meta = new ModMetadata();
+        meta.modId = "gregtech";
+        Loader.instance().setupTestHarness(new DummyModContainer(meta));
     }
 
     @Test

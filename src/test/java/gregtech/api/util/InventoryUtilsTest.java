@@ -4,6 +4,9 @@ import net.minecraft.init.Bootstrap;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagString;
+import net.minecraftforge.fml.common.DummyModContainer;
+import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.ModMetadata;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.junit.BeforeClass;
@@ -24,6 +27,9 @@ public class InventoryUtilsTest {
     @BeforeClass
     public static void bootStrap() {
         Bootstrap.register();
+        ModMetadata meta = new ModMetadata();
+        meta.modId = "gregtech";
+        Loader.instance().setupTestHarness(new DummyModContainer(meta));
     }
 
     /**
